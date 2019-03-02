@@ -13,12 +13,11 @@ Simply I've just Started to build spring-boot-boilerplate that helps new spring-
 
 ### Installation
 
-```install STS plugin for eclipse 
-```install mvn 
-```Run as --> Spring Boot App
+	- install STS plugin for eclipse 
+	- install mvn 
+	- Run as Spring Boot App
 
-
-### Todos
+# Todos
  	- Secure APIs with JWT Authentication
 	- Swagger annotations and JAVADOC (Cleaning Code)
 	- Unit-test Configuration 
@@ -26,6 +25,4 @@ Simply I've just Started to build spring-boot-boilerplate that helps new spring-
 	- Add new features
 
 License
-----
-MIT
 **Free Software by Khallad Sharaf El-Din!**
