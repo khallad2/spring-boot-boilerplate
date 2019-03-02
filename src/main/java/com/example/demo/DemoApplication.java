@@ -19,6 +19,3 @@ public class DemoApplication {
 	}
 }
 
-//@EnableAutoConfiguration
-//@ComponentScan({"com.example.model", "com.example.resources", "com.example.repository"})
-//@EntityScan("com.example.demo.model")
