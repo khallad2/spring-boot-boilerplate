@@ -5,13 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-import com.example.demo.model.User;
-import com.example.demo.resource.UserResource;
-import com.example.repository.UsersRepo;
-
 @SpringBootApplication
-@EnableJpaRepositories("com.example.repository")
-@ComponentScan(basePackageClasses = {UserResource.class, UsersRepo.class, User.class})
+@EnableJpaRepositories("com.example.demo.repository")
+@ComponentScan("com.example.demo")
 
 public class DemoApplication {
 	public static void main(String[] args) {
