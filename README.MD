@@ -13,15 +13,16 @@ Simply I've just Started to build spring-boot-boilerplate that helps new spring-
 
 ### Installation
 
-	- install STS plugin for eclipse 
-	- install mvn 
+	- install Java-8 `https://www.java.com/en/download/`
+	- install STS plugin for eclipse from eclipse Market-Place
+	- install maven `http://maven.apache.org/` 
 	- Run as Spring Boot App
 
 # Todos
  	- Secure APIs with JWT Authentication
-	- Swagger annotations and JAVADOC (Cleaning Code)
 	- Unit-test Configuration 
 	- Write test cases to validate code quality
+	- Swagger annotations and JAVADOC (Cleaning Code)
 	- Add new features
 
 License
