@@ -1,8 +1,11 @@
-package com.example.demo.resource;
+package com.example.demo.controller;
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Logger;
+
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,29 +25,27 @@ public class UserController {
 	UserService userService;
 
 	@GetMapping("/all")
-	public List<User> users() {
-		return userService.users();
+	public ResponseEntity<List<User>> getAll() {
+		return new ResponseEntity<List<User>>(userService.getAll(), HttpStatus.OK);
 	}
 	
 	@PutMapping("/find/{id}")
-	public User find(@PathVariable Integer id, @RequestBody User user) {
-		return userService.find(id, user);
+	public ResponseEntity<Object> find(@PathVariable Integer id, @RequestBody User user) {
+		return new ResponseEntity<Object>(userService.find(id, user), HttpStatus.OK);
 	}
 	
 	@PostMapping("/create")
-	public User save(@Valid @RequestBody User user) {
-		return userService.save(user);
+	public ResponseEntity<Object> save(@Valid @RequestBody User user) {
+		return new ResponseEntity<Object>(userService.save(user), HttpStatus.OK);
 	}
 	
 	@PutMapping("/update/{id}")
 	public ResponseEntity<Object> update(@PathVariable("id") Integer id,@RequestBody User user) {	
-			System.out.print(userService.find(id, user));	
-			return userService.update(id, user);
+		return new ResponseEntity<Object>(userService.update(id, user), HttpStatus.OK);		
 	}
 	
 	@DeleteMapping("/delete/{id}")
-	public Optional<User> delete(@PathVariable("id") Integer id) {
-		Optional<User> res = userService.delete(id);
-		return res;
+	public ResponseEntity<Object> delete(@PathVariable("id") Integer id) {
+		return new ResponseEntity<Object>(userService.delete(id), HttpStatus.OK);
 	}
 }
