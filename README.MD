@@ -11,7 +11,7 @@ Simply I've just Started to build spring-boot-boilerplate that helps new spring-
 	- User JPA repository created to handle users table CRUD operations
 	- REST end-points to handle CRUD API requests to users records  
 
-### Installation
+# Installation
 
 	- install Java-8 `https://www.java.com/en/download/`
 	- install STS plugin for eclipse from eclipse Market-Place

@@ -1,8 +1,6 @@
 package com.example.demo.controller;
-import java.util.List;
-import java.util.Optional;
-import java.util.logging.Logger;
 
+import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -40,8 +38,13 @@ public class UserController {
 	}
 	
 	@PutMapping("/update/{id}")
-	public ResponseEntity<Object> update(@PathVariable("id") Integer id,@RequestBody User user) {	
-		return new ResponseEntity<Object>(userService.update(id, user), HttpStatus.OK);		
+	public ResponseEntity<Object> update(@PathVariable("id") Integer id,@RequestBody User user) {
+		User myUser = userService.update(id, user);
+		if( myUser == null) {
+			return new ResponseEntity<Object>("User Not Found", HttpStatus.BAD_REQUEST);	
+		} else {
+			return new ResponseEntity<Object>(userService.update(id, user), HttpStatus.OK);	
+		}		
 	}
 	
 	@DeleteMapping("/delete/{id}")
